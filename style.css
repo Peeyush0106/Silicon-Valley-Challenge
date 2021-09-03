@@ -1,0 +1,47 @@
+html, body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#my-name {
+    color: green;
+}
+
+.checkbox-elt {
+    transition: .9s;
+}
+
+.checkbox-elt:hover {
+    cursor: pointer;
+    background-color: purple;
+    color: yellowgreen;
+    transform: scale(1.5);
+    /* background-color:orangered; */
+}
+
+input[type="button"], input[type="submit"] {
+    transition: .5s;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(152, 221, 112);
+    color: rgb(130, 50, 205);
+    transform: scale(1.1);
+}
+
+input[type="text"] {
+    transition: .5s;
+}
+
+::placeholder {
+    color: red;
+    opacity: 90%;
+    font-weight: bold;
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+    cursor: pointer;
+    background-color: black;
+    color: yellow;
+    transform: scale(1.02);
+}
