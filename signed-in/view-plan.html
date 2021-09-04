@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View your plan</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="alert-styles.css" type="text/css">
+
+    <script src="exportDataToCSV.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script>
+        firebase.initializeApp({
+            apiKey: "AIzaSyB0pnO5b0Kk4ZAvJoXxcOD2qadCIAIjh7Q",
+            authDomain: "exam-planner---build-up.firebaseapp.com",
+            projectId: "exam-planner---build-up",
+            storageBucket: "exam-planner---build-up.appspot.com",
+            messagingSenderId: "855254863426",
+            appId: "1:855254863426:web:b7ffa5553ce739428a67db",
+            measurementId: "G-TD0JR7V8BG"
+        });
+        var database = firebase.database();
+        var auth = firebase.auth();
+
+        showWelcome();
+        showHTMLAnimation();
+
+        function showWelcome() {
+            if (auth.currentUser) {
+                database.ref("Users/" + auth.currentUser.uid + "/name").get().then((data) => {
+                    if (data.exists()) {
+                        userName = data.val();
+
+                        document.getElementById("my-name").innerText = "Welcome, " + userName;
+                        currentFormInfo.hidden = false;
+                        createSubjectSelector();
+                    }
+                });
+            }
+        }
+
+        function showHTMLAnimation() {
+            setTimeout(function () {
+                document.body.style.transition = ".6s";
+                document.body.style.transform = "scale(1.6)";
+            }, 100);
+        }
+    </script>
+</head>
+
+<body>
+    <table id="plan-table">
+        <thead>
+            <th>
+                Subject
+            </th>
+            <th>
+                Dfficulty
+            </th>
+            <th>
+                No of chapters
+            </th>
+            <th>
+                Time for each chapter
+            </th>
+            <th>
+                Total No. of hours required
+            </th>
+            <th>
+                Days needed
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                End Date
+            </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    English
+                </td>
+                <td>
+                    Normal
+                </td>
+                <td>
+                    8
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    32
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    हिन्दी
+                </td>
+                <td>
+                    Difficult
+                </td>
+                <td>
+                    10
+                </td>
+                <td>
+                    4
+                </td>
+                <td>
+                    40
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+                <td>
+                    --
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 
+        Not available in basic prototype mode
+        <button id="edit-btn">
+            <a href="edit-plan.html">
+                <img src="edit.png" draggable="false" width="20" style="border: none; background: none" />
+            </a>
+        </button>
+ -->
+
+    <br>
+
+    <button onclick="askExportFileOptions()" id="dnlad-btn" style="font-size: 30px;">
+        ⭳ Download Plan ⭳
+    </button>
+
+    <script>
+        function askExportFileOptions() {
+            var fileName = prompt("Enter a name for your file.");
+            if (fileName === "") {
+                alert("Invalid name");
+                askExportFileOptions();
+            }
+            else if (fileName !== null) {
+                exportData('plan-table', fileName);
+                var succesDiv = document.createElement("div");
+                succesDiv.innerHTML = `
+                    <br><br>
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        File saved successfully
+                    </div>
+                `;
+                document.body.appendChild(succesDiv);
+            }
+        }
+    </script>
+</body>
+
+</html>

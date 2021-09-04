@@ -1,5 +1,0 @@
- - First exam should be studied at the last
- - Toughest First
- - If the toughest is the only first, then also study at the last
- - Order should be like tough-easy-tough-easy...
- - We have to allow users to edit the plan.
