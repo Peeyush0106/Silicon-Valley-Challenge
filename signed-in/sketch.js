@@ -1,3 +1,30 @@
+/*                                              
+                        |   |
+                        |---| |--| | |  __
+                        |   | |--| | | |  |
+                        |   | |___ | | |__|
+
+Hello !!!
+
+This it the Ultimate Exam Planner.
+
+This app is a very basic prototype version until now.
+This just includes the must-haves.
+The newer version will come soon.
+
+The full-fledge version of this app includes a lot more features than this one.
+It will also include study related tools like Shared Canvas (for team work with friends), To-do manager (For task management), File Sharers (Sharing study files with a team), etc.
+
+Hope this helps you in your daily-life and lessens your issues !!
+
+Thanks for veiwing The Ultimate Exam Planner.
+Hope you will like it.
+
+
+
+*/
+
+
 var userName, submitSbjctsBtn;
 var inputSubjectBoxes = [];
 var commonSubjects = ["English", "हिन्दी", "Science", "Social Studies", "Information Technology (Computers)", "Deutsch (German)", "Français (French)"];
@@ -75,13 +102,4 @@ function showHTMLAnimation() {
         document.body.style.transition = ".6s";
         document.body.style.transform = "scale(1.6)";
     }, 100);
-}
-
-function goToHomeDirectly() {
-    if (!directlyAtHome) {
-        // console.log("Signed in as", auth.currentUser.email);
-        // directlyAtHome = true;
-        // showWelcome();
-
-    }
 }
