@@ -26,6 +26,9 @@ function setPointPos() {
 
 function showLoadingAnim() {
 	clear();
+	if (document.getElementById("logout-btn")) document.getElementById("logout-btn").hidden = true;
+	if (document.getElementById("dnlad-btn")) document.getElementById("dnlad-btn").hidden = true;
+
 	for (var j = 0; j < point_positions.length; j++) {
 		if (point_positions[j] !== null) {
 			fill(64, 93, 196);

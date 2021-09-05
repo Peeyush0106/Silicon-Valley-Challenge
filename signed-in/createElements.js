@@ -83,7 +83,7 @@ function createSubmitSbjctsBtn() {
                 noOfCheckBoxes += 1;
             }
         }
-        if ((choseSubjects[0] !== undefined && choseSubjects[0] !== "") || noOfCheckBoxes > 0) {
+        if ((choseSubjects[0] !== undefined && choseSubjects[0] !== "") || noOfCheckBoxes > 0 || inputSubjectBoxes[0].value !== "") {
             for (const m in inputSubjectBoxes) {
                 const searchBox = inputSubjectBoxes[m];
                 choseSubjects.push(searchBox.value);
@@ -91,7 +91,7 @@ function createSubmitSbjctsBtn() {
             subjectSelectorDiv.hidden = true;
             createSubjectRatingTable(choseSubjects);
         }
-        else /*if()*/ alert("Please choose at least one subject");
+        else if (inputSubjectBoxes[0].value === "") alert("Please choose at least one subject");
     });
     subjectSelectorDiv.appendChild(submitSbjctsBtn);
 }
@@ -132,7 +132,7 @@ function createSubjectRatingTable(allSubjects) {
             <td style="background-color: purple; color: white;">
                 ` + subject + `
                 <br>
-                <button id="cancelBtn-` + subject + `"> </button>
+                <!-- <button id="cancelBtn-` + subject + `"> </button> -->
             </td>
             <td>
                 <table style="background-color: yellow; color: red" id="rating-table-child">
@@ -216,17 +216,17 @@ function createSubjectRatingTable(allSubjects) {
             </td>
         `;
 
-        var cancelImg = document.createElement("img");
-        cancelImg.src = "delete_grn.png ";
-        cancelImg.width = 30;
+        // var cancelImg = document.createElement("img");
+        // cancelImg.src = "delete_grn.png ";
+        // cancelImg.width = 30;
 
         document.getElementById("body-of-rating-table").appendChild(subjectTrDiv);
-        document.getElementById("cancelBtn-" + subject).appendChild(cancelImg);
+        // document.getElementById("cancelBtn-" + subject).appendChild(cancelImg);
 
-        document.getElementById("cancelBtn-" + subject).style["box-shadow"] = "none";
-        document.getElementById("cancelBtn-" + subject).onclick = function () {
-            console.log("Removed", subject);
-        }
+        // document.getElementById("cancelBtn-" + subject).style["box-shadow"] = "none";
+        // document.getElementById("cancelBtn-" + subject).onclick = function () {
+        //     console.log("Removed", subject);
+        // }
     }
     var inputs = document.getElementsByTagName("input");
     for (const q in inputs) {
@@ -370,11 +370,7 @@ function askSpecificQuestions() {
     viewPlanDiv.innerHTML = `
         <br><br>
         <button id="view-plan-btn" onclick="runRuleEngine()">
-            <!-- <a href="view-plan.html">-->
-                <div class="link-text">
-                    Submit and View your Plan
-                </div>
-            <!--</a> -->
+            Submit and View your Plan
         </button>
     `;
 

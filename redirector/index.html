@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Ultimate Exam Planner</title>
 
+    <script src="/p5.js"></script>
+    <script src="/p5.play.js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
@@ -23,11 +26,10 @@
         var database = firebase.database();
         var auth = firebase.auth();
 
-        window.onload = function () {
-            if (!auth.currentUser) location.href = "/signin/index.html";
-            else location.href = "/signed-in/index.html";
-        }
     </script>
+
+    <script src="loading.js"></script>
+    <script src="authentication.js"></script>
 </head>
 
 </html>

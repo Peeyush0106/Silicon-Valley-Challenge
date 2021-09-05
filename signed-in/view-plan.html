@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="alert-styles.css" type="text/css">
 
+    <script src="/p5.js"></script>
+    <script src="/p5.play.js"></script>
+    <script src="loading.js"></script>
+    <script src="authentication.js"></script>
+    <script src="plotPlanData.js"></script>
+
     <script src="exportDataToCSV.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
@@ -162,7 +168,7 @@
                 askExportFileOptions();
             }
             else if (fileName !== null) {
-                exportData('plan-table', fileName);
+                exportData('main-plan-table', fileName);
                 var succesDiv = document.createElement("div");
                 succesDiv.innerHTML = `
                     <br><br>
