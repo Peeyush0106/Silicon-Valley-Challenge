@@ -55,10 +55,11 @@ input[type="text"], input[type="number"], input[type="email"], input[type="passw
 }
 
 input[type="text"]:hover, input[type="text"]:focus, input[type="number"]:hover, input[type="number"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus {
+    color: red;
     transform: scale(1.02);
 }
 
-input[type="date"]:hover, input[type="date"]:focus, #edit-btn:hover, #dnlad-btn:hover {
+input[type="date"]:hover, input[type="date"]:focus, button#edit-btn:hover {
     background-color: cyan;
     transform: scale(1.02);
     cursor: pointer;
@@ -99,7 +100,7 @@ td {
     border-radius: 10%;
 }
 
-#plan-table, #edit-plan, #dnlad-btn {
+#plan-table, #edit-plan {
     border: 2.5px solid;
     border-color: orangered;
     border-radius: 5%;
