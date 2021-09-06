@@ -79,7 +79,7 @@ function updateUserInputs(data) {
         database.ref("Users/" + auth.currentUser.uid + "/Plans/" + planName).update({
             planData: data
         }).then(() => {
-            location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/view-plan.html";
+            location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signed-in/view-plan.html";
         });
     }
 }
