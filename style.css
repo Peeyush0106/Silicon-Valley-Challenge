@@ -55,7 +55,7 @@ input[type="text"], input[type="number"], input[type="email"], input[type="passw
 }
 
 input[type="text"]:hover, input[type="text"]:focus, input[type="number"]:hover, input[type="number"]:focus, input[type="email"]:hover, input[type="email"]:focus, input[type="password"]:hover, input[type="password"]:focus {
-    color: yellow;
+    color: red;
     transform: scale(1.02);
 }
 
