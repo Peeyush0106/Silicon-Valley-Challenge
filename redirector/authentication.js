@@ -14,7 +14,7 @@ function checkConnectionEvery2Seconds() {
     connectedRef.on("value", function (snap) {
         console.log(snap);
         if (snap.val()) {
-            if (auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challengesigned-in/index.html";
+            if (auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signed-in/index.html";
             else location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signin/index.html";
         }
     });
