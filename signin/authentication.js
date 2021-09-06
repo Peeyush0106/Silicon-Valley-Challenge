@@ -19,7 +19,7 @@ function checkConnectionEvery2Seconds() {
             if (snap.val()) {
                 animationStarted = false;
                 canvas.elt.hidden = true;
-                if (auth.currentUser) location.href = "/signed-in/index.html";
+                if (auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signed-in/index.html";
             }
             else if (!animationStarted && !snap.val()) {
                 setContinuousLoadingAnim();

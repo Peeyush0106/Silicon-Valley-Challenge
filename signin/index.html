@@ -12,9 +12,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-    <script src="/p5.js"></script>
-    <script src="/p5.play.js"></script>
-    <script src="/loading.js"></script>
+    <script src="p5.js"></script>
+    <script src="p5.play.js"></script>
+    <script src="loading.js"></script>
     <script src="cloud-functions.js"></script>
     <script src="authentication.js"></script>
     
@@ -128,13 +128,13 @@
                             database.ref("Users/" + auth.currentUser.uid).update({
                                 name: userName
                             }).then(() => {
-                                location.href = "/signed-in"
+                                location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signed-in"
                             });
                         });
                     }
                     if (login) {
                         auth.signInWithEmailAndPassword(email, pwd).then(() => {
-                            location.href = "/signed-in";
+                            location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/signed-in";
                             console.log("Success!");
                         });
                     }

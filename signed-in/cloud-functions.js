@@ -18,7 +18,7 @@ function checkConnectionEvery2Seconds() {
         var connectedRef = database.ref(".info/connected");
         connectedRef.on("value", function (snap) {
             if (snap.val()) {
-                if (!auth.currentUser) location.href = "/index.html";
+                if (!auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
                 animationStarted = false;
                 canvas.elt.hidden = true;
                 if (!welcomeDisplayed) showWelcome(); welcomeDisplayed = true;

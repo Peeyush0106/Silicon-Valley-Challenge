@@ -23,7 +23,7 @@ function checkConnectionEvery2Seconds() {
                     getMyPlans();
                     plottedPlanData = true;
                 }
-                if (!auth.currentUser) location.href = "/index.html";
+                if (!auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
             }
             else if (!animationStarted && !snap.val()) {
                 setContinuousLoadingAnim();
@@ -40,7 +40,7 @@ function getMyPlans() {
             if (data.exists()) {
                 plotMyPlans(data);
             }
-            else location.href = "/index.html";
+            else location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
         });
     }
 }
