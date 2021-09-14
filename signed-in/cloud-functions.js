@@ -21,6 +21,7 @@ function checkConnectionEvery2Seconds() {
                 if (!auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
                 animationStarted = false;
                 canvas.elt.hidden = true;
+                if (document.getElementById("logout-btn")) document.getElementById("logout-btn").hidden = false;
                 if (!welcomeDisplayed) showWelcome(); welcomeDisplayed = true;
             }
             else if (!animationStarted && !snap.val()) {
