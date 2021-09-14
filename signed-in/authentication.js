@@ -48,11 +48,11 @@ function getMyPlans() {
 }
 
 function plotMyPlans(data) {
+    createPlanTable();
     var allPlans = data.val();
     for (const u in allPlans) {
         const planData = allPlans[u].planData;
         console.log(planData);
-        createPlanTable();
         tableMade = true;
         for (const v in planData) {
             const subjectData = planData[v];
