@@ -23,7 +23,6 @@ function checkConnectionEvery2Seconds() {
                 if (document.getElementById("dnlad-btn")) document.getElementById("dnlad-btn").hidden = false;
                 if (!plottedPlanData) {
                     getMyPlans();
-                    plottedPlanData = true;
                 }
                 if (!auth.currentUser) location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
             }
@@ -38,8 +37,9 @@ function checkConnectionEvery2Seconds() {
 
 function getMyPlans() {
     if (auth.currentUser) {
-        database.ref("Users/" + auth.currentUser.uid + "/Plans").get().then((data) => {
+        database.ref("Users/" + auth.currentUser.uid + "/Plans").once("value", function (data) {
             if (data.exists()) {
+                plottedPlanData = true;
                 plotMyPlans(data);
             }
             else location.href = "https://peeyush0106.github.io/Silicon-Valley-Challenge/index.html";
