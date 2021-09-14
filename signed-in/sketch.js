@@ -30,11 +30,12 @@ var inputSubjectBoxes = [];
 var commonSubjects = ["English", "Science", "Social Studies", "Information Technology (Computers)", "Deutsch (German)", "Français (French)"];
 var addedOtherInptBoxShown = false;
 var planTypeAnswers = [
-    "Aggressive Start, Light End (Recommended)",
-    "Even Plan, stays equal effort everyday",
-    "Light Start, Aggressive End <br> (Not recommended for people who find difficulty in studying)",
-    "Random",
-    "Aggressive + Light - One day tough, next day easy"
+    "Aggressive Start, Light End (Recommended) - unsupported",
+    "Basic Plan - supported",
+    "Even Plan, stays equal effort everyday - unsupported",
+    "Light Start, Aggressive End <br> (Not recommended for people who find difficulty in studying) - unsupported",
+    "Random - unsupported",
+    "Aggressive + Light - One day tough, next day easy - unsupported"
 ];
 var defaultNoOfDaysLeft = 21;
 var directlyAtHome = false;

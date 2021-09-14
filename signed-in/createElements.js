@@ -283,7 +283,7 @@ function askForWhenIsTheExam() {
 }
 
 function choosePlanType() {
-    currentFormInfo.innerHTML = "Choose the type of plan you want. <br> <strong style='font-size: 40px; color: cyan; background-color: red;'> For basic prototype version, we are only supporting even plan (2nd option) until now. Other plans will be added soon... </strong>";
+    currentFormInfo.innerHTML = "Choose the type of plan you want. <br> <strong style='font-size: 40px; color: cyan; background-color: red;'> For basic prototype version, we are only supporting basic plan (2nd option) until now. Other plans will be added soon... </strong>";
     currentFormInfo.style["background-color"] = "lightgreen";
 
     var choosePlanTypeDiv = document.createElement("div");
