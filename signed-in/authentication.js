@@ -19,6 +19,8 @@ function checkConnectionEvery2Seconds() {
             if (snap.val()) {
                 animationStarted = false;
                 canvas.elt.hidden = true;
+                if (document.getElementById("logout-btn")) document.getElementById("logout-btn").hidden = false;
+                if (document.getElementById("dnlad-btn")) document.getElementById("dnlad-btn").hidden = false;
                 if (!plottedPlanData) {
                     getMyPlans();
                     plottedPlanData = true;
@@ -49,6 +51,7 @@ function plotMyPlans(data) {
     var allPlans = data.val();
     for (const u in allPlans) {
         const planData = allPlans[u].planData;
+        console.log(planData);
         createPlanTable();
         tableMade = true;
         for (const v in planData) {
