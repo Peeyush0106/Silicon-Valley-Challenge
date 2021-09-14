@@ -27,7 +27,7 @@ Hope you will like it.
 
 var userName, submitSbjctsBtn;
 var inputSubjectBoxes = [];
-var commonSubjects = ["English", "हिन्दी", "Science", "Social Studies", "Information Technology (Computers)", "Deutsch (German)", "Français (French)"];
+var commonSubjects = ["English", "Science", "Social Studies", "Information Technology (Computers)", "Deutsch (German)", "Français (French)"];
 var addedOtherInptBoxShown = false;
 var planTypeAnswers = [
     "Aggressive Start, Light End (Recommended)",
