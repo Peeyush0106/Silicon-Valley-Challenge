@@ -48,7 +48,7 @@ function getMyPlans() {
 }
 
 function plotMyPlans(data) {
-    if (document.getElementById("main-plan-table")) {
+    if (!document.getElementById("main-plan-table")) {
         createPlanTable();
     }
     var allPlans = data.val();
