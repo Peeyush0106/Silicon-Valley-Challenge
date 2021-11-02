@@ -48,20 +48,23 @@ function getMyPlans() {
 }
 
 function plotMyPlans(data) {
-    console.log(!document.getElementById("main-plan-table"), document.getElementById("main-plan-table"));
     if (!document.getElementById("main-plan-table")) {
         createPlanTable();
-        console.log("plot");
     }
     var allPlans = data.val();
     for (const u in allPlans) {
         const planData = allPlans[u].planData;
         console.log(planData);
         tableMade = true;
+        var planDataLoops = 0;
         for (const v in planData) {
+            planDataLoops += 1;
             const subjectData = planData[v];
-            console.log(subjectData);
-            plotPlanData(subjectData);
+            if (planDataLoops !== planData.length) {
+                console.log(subjectData);
+                plotPlanData(subjectData);
+            }
+            else break;
         }
     }
 }
