@@ -48,8 +48,10 @@ function getMyPlans() {
 }
 
 function plotMyPlans(data) {
+    console.log(!document.getElementById("main-plan-table"), document.getElementById("main-plan-table"));
     if (!document.getElementById("main-plan-table")) {
         createPlanTable();
+        console.log("plot");
     }
     var allPlans = data.val();
     for (const u in allPlans) {
